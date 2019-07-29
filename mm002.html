@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Radio MM</title>
+    <style>
+        input {
+			
+			display:none;
+			
+		}
+		
+		label{
+			display:inline;
+			position : relative;
+			
+		}
+		label::before {
+			position: absolute;
+			content:'';
+			width : 60px;
+			height: 60px;
+			border: 1px solid black;
+			cursor:pointer;
+
+			
+			border-radius:50%;
+			
+		}
+
+		.check1::before {
+			background: firebrick;
+		}
+		.check2::before {
+			background: gold;
+		}
+		.check3::before {
+			background: limegreen;
+		}
+		.check4::before{
+			background: skyblue;
+		}
+		.check5::before {
+			background: fuchsia;
+		}
+		.check6::before {
+			background: darkorange;
+		}
+
+.knop:checked + label::before {
+  border: 5px solid black;
+}
+
+.circle {
+	width: 40px;
+	height:40px;
+	border-radius: 50%;
+	
+	/*background:black;*/
+	border: 3px solid black;
+}
+
+/* SUBMITBUTTON */
+#tester {
+	width: 80vw;
+	margin: 0 auto;
+	height: 120px;
+	text-align:center;
+	line-height: 200px;
+	font-size: 2em;
+	color: white;
+	background: limegreen;
+	border-radius: 15px;
+	line-height: 120px;
+	cursor:pointer;
+}
+
+/*INVULFORM TTZ RADIOS MET KLEUREN*/
+.invulform {
+	display:flex;
+	border: 1px solid gold;
+	min-height: 150px;
+	width: 90vw;
+	margin: 0 auto;
+	justify-content:space-around;
+}
+
+.d-flex {
+	display:flex;
+	justify-content:space-around;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+/*DFLEX CATEGORIE VOOR RESULTATEN*/
+
+.d-flex01 {
+	flex-basis: 30%;
+	display:flex;
+	justify-content: space-around;
+
+}
+
+/*DFLEX VOOR OPGAVE*/
+
+.d-flex02 {
+	flex-basis: 70%;
+	display:flex;
+	justify-content: space-around;
+
+}
+
+/*FORM IN GRID 3 KOLOMMEN*/
+
+form {
+	display:grid;
+	grid-template-columns: auto auto auto ;
+	width: 100%;
+	border: 1px solid gold;
+}
+.form {
+	display: flex;
+	justify-content: space-around;
+	min-width: 22vw;
+}
+
+.result {
+	display: flex;
+
+}
+
+/*STIJL CIRCELS NA INVUL*/
+
+.restcircle {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 1px solid green;
+}
+
+
+
+		
+
+	</style>
+</head>
+
+<body>
+    <h1>een titel</h1>
+    <div class="invulform">
+        <div class="form1 form">
+            <form action="" id="formulier01">
+                <input type="radio" name="kleur" value="rood" class="knop" id="knop1">
+                <label class="check1" for="knop1"></label>
+                <input type="radio" name="kleur" value="geel" class="knop" id="knop2">
+                <label class="check2" for="knop2"></label>
+                <input type="radio" name="kleur" value="groen" class="knop" id="knop3">
+                <label class="check3" for="knop3"></label>
+                <input type="radio" name="kleur" value="blauw" class="knop" id="knop4">
+                <label class="check4" for="knop4"></label>
+                <input type="radio" name="kleur" value="paars" class="knop" id="knop5">
+                <label class="check5" for="knop5"></label>
+                <input type="radio" name="kleur" value="oranje" class="knop" id="knop6">
+                <label class="check6" for="knop6"></label>
+            </form>
+        </div>
+        <div class="form2 form">
+            <form action="" id="formulier02">
+                <input type="radio" name="kleur" value="rood" class="knop" id="knop12">
+                <label class="check1 check" for="knop12"></label>
+                <input type="radio" name="kleur" value="geel" class="knop" id="knop22">
+                <label class="check2" for="knop22"></label>
+                <input type="radio" name="kleur" value="groen" class="knop" id="knop32">
+                <label class="check3" for="knop32"></label>
+                <input type="radio" name="kleur" value="blauw" class="knop" id="knop42">
+                <label class="check4" for="knop42"></label>
+                <input type="radio" name="kleur" value="paars" class="knop" id="knop52">
+                <label class="check5" for="knop52"></label>
+                <input type="radio" name="kleur" value="oranje" class="knop" id="knop62">
+                <label class="check6" for="knop62"></label>
+            </form>
+        </div>
+        <div class="form3 form">
+            <form action="" id="formulier03">
+                <input type="radio" name="kleur" value="rood" class="knop" id="knop13">
+                <label class="check1" for="knop13"></label>
+                <input type="radio" name="kleur" value="geel" class="knop" id="knop23">
+                <label class="check2" for="knop23"></label>
+                <input type="radio" name="kleur" value="groen" class="knop" id="knop33">
+                <label class="check3" for="knop33"></label>
+                <input type="radio" name="kleur" value="blauw" class="knop" id="knop43">
+                <label class="check4" for="knop43"></label>
+                <input type="radio" name="kleur" value="paars" class="knop" id="knop53">
+                <label class="check5" for="knop53"></label>
+                <input type="radio" name="kleur" value="oranje" class="knop" id="knop63">
+                <label class="check6" for="knop63"></label>
+            </form>
+        </div>
+        <div class="form4 form">
+            <form action="" id="formulier04">
+                <input type="radio" name="kleur" value="rood" class="knop" id="knop14">
+                <label class="check1" for="knop14"></label>
+                <input type="radio" name="kleur" value="geel" class="knop" id="knop24">
+                <label class="check2" for="knop24"></label>
+                <input type="radio" name="kleur" value="groen" class="knop" id="knop34">
+                <label class="check3" for="knop34"></label>
+                <input type="radio" name="kleur" value="blauw" class="knop" id="knop44">
+                <label class="check4" for="knop44"></label>
+                <input type="radio" name="kleur" value="paars" class="knop" id="knop54">
+                <label class="check5" for="knop54"></label>
+                <input type="radio" name="kleur" value="oranje" class="knop" id="knop64">
+                <label class="check6" for="knop64"></label>
+            </form>
+        </div>
+    </div>
+    <div id="tester">
+        <h3>SUBMIT</h3>
+    </div>
+    <div id="beurt"></div>
+    <script>
+    var speler = [];
+    var spelerNew = [];
+    var opgaveNew = [];
+    var beurt = document.getElementById("beurt");
+    beurt.classList.add("d-flex");
+
+    var kleuren = ['rood', 'geel', 'groen', 'blauw', 'paars', 'oranje'];
+    var a = Math.floor(Math.random() * 6);
+    var b = Math.floor(Math.random() * 6);
+    var c = Math.floor(Math.random() * 6);
+    var d = Math.floor(Math.random() * 6);
+
+    console.log(a, b, c, d);
+
+    var opgave = [kleuren[a], kleuren[b], kleuren[c], kleuren[d]];
+
+    console.log(opgave);
+
+    var teller = 0;
+
+    function waardeOphalen() {
+        var speler = [];
+        for (var g = 1; g < 5; g++) {
+            var checkboxgroup = document.getElementById('formulier0' + g).getElementsByTagName("input");
+            for (var w = 0; w < checkboxgroup.length; w++) {
+                if (checkboxgroup[w].checked == true) {
+                    speler.push(checkboxgroup[w].value);
+                }
+            }
+        }
+        return speler;
+    }
+
+    function waardeTesten(spel, op) {
+        var wit = 0;
+        var zwart = 0;
+        var spelerNew = spel.slice();
+        var opgaveNew = op.slice();
+        console.log("dit is spelerNew " + spelerNew);
+        console.log("dit is opgaveNew " + opgaveNew);
+
+        for (var q = 0; q < 4; q++) {
+            if (spelerNew[q] == opgaveNew[q]) {
+                console.log(speler[q] + " is gelijk, kleur staat juist");
+                delete spelerNew[q];
+                delete opgaveNew[q];
+                console.log("dit is spelerNew na zwart " + spelerNew);
+                console.log(spelerNew.length);
+                zwart++;
+            }
+        }
+
+        for (var s = 0; s < 4; s++) {
+
+            if (opgaveNew.indexOf(spelerNew[s]) != -1) {
+                console.log(spelerNew[s] + " is juist maar geen juiste plaats");
+
+                var num = opgaveNew.indexOf(spelerNew[s]);
+                delete spelerNew[s];
+                delete opgaveNew[num];
+                wit++;
+                console.log("dit is spelerNew na wit " + spelerNew);
+                console.log("dit is opgaveNew na wit " + opgaveNew);
+            }
+
+        }
+
+        console.log("zwart = " + zwart);
+        console.log("wit = " + wit);
+        console.log("de opgave eind =" + opgave);
+
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("d-flex01");
+        beurt.appendChild(newDiv);
+
+
+        for (var b = 0; b < zwart; b++) {
+
+            var circ = document.createElement("div");
+            newDiv.appendChild(circ);
+
+
+            circ.style.visibility = 'visible';
+            circ.style.background = 'black';
+            circ.classList.add("circle");
+
+        }
+
+        for (var c = 0; c < wit; c++) {
+
+            var circ = document.createElement("div");
+            newDiv.appendChild(circ);
+
+            circ.style.visibility = 'visible';
+            circ.style.background = 'lightgrey';
+
+            circ.classList.add("circle");
+
+        }
+        for (var d = 0; d < (4 - zwart - wit); d++) {
+            var circ = document.createElement("div");
+            newDiv.appendChild(circ);
+
+            circ.style.visibility = 'visible';
+            circ.style.background = 'white';
+
+            circ.classList.add("circle");
+        }
+
+    }
+
+    function beurtWeergeven(spel) {
+        var background;
+        var restspeler = spel;
+        // var x = createElement('div');
+        // x.classList.add("result");
+        // document.body.appendChild("x");
+        // var newResult = document.createElement('div');
+        // newResult.classList.add("resultcircle");
+        // document.body.appendChild('newResult');
+        var newRest = document.createElement("div");
+        newRest.classList.add("d-flex02");
+        beurt.appendChild(newRest);
+        for (var i = 0; i < 4; i++) {
+
+            switch (restspeler[i]) {
+                case "rood":
+                    background = "firebrick";
+                    break;
+                case "geel":
+                    background = "gold";
+                    break;
+                case "groen":
+                    background = "limegreen";
+                    break;
+                case "blauw":
+                    background = "skyblue";
+                    break;
+                case "paars":
+                    background = "fuchsia";
+                    break;
+                case "oranje":
+                    background = "darkorange";
+                    break;
+            }
+            var col = document.createElement('div');
+            newRest.appendChild(col);
+            col.style.background = background;
+            col.classList.add("restcircle");
+
+        }
+    }
+    var tester = document.getElementById('tester');
+    tester.addEventListener('click', function() {
+        var wit = 0;
+        var zwart = 0;
+        console.log("wit is terug " + wit);
+        console.log("zwart is terug " + zwart);
+        teller++;
+
+
+        var speler = waardeOphalen();
+        waardeTesten(speler, opgave);
+        beurtWeergeven(speler);
+
+
+        console.log("dit is de controle " + speler);
+        console.log("dit is de opgave " + opgave);
+        console.log("dit is de teller " + teller);
+
+
+
+
+    });
+    </script>
+</body>
+
+</html>
