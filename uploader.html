@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploader</title>
+    <style>
+    body, html {
+        margin: 0;
+        padding:0;
+        }
+        #bigOne {
+            text-align:center;
+            
+        }
+        
+        #container {
+            display:flex;
+            min-height: 80vh;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        }
+        
+        #uploader {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+    </head>
+<body>
+    <h1 id="bigOne">Uploader</h1>
+    
+    <div id="container">
+    
+        <progress value="0" max="100" id="uploader">0%</progress>
+        <input type="file" value="upload" id = "fileButton" />
+    </div>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyD8UT_hls9kisR8JEanegyKWVRdimECArs",
+    authDomain: "projecthistory-wom.firebaseapp.com",
+    databaseURL: "https://projecthistory-wom.firebaseio.com",
+    projectId: "projecthistory-wom",
+    storageBucket: "projecthistory-wom.appspot.com",
+    messagingSenderId: "655750246180"
+  
+  
+  
+  };
+  firebase.initializeApp(config);
+        
+//Get elements
+    var uploader = document.getElementById('uploader');
+    var fileButton = document.getElementById('fileButton');
+        
+// Listen for file selection
+    fileButton.addEventListener('change', function(e){
+        //Get file
+        var file = e.target.files[0];
+        
+        //Create a storage ref
+        var storageRef = firebase.storage().ref('testfolder/' +  file.name);
+        
+        //upload file
+        var task = storageRef.put(file);
+        
+         //update progress bar
+        
+        task.on('state_changed',
+               
+               function progress(snapshot) {
+            var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log("function is triggered");
+            uploader.value= percentage;
+        },
+                function error(err) {
+            console.log(err);
+        },
+                function complete() {
+            //todo let user know file is uploaded
+            //todo clear uploadbalk after progress
+            //todo change uploadbalk to something funky
+            
+        }
+               
+                );
+        
+       
+        
+        });
+</script>
+</body>
+</html>
